@@ -99,15 +99,9 @@ def terms():
 @app.route("/review")
 def review():
     if REDIRECT_URL:
-        return redirect(
-            REDIRECT_URL,
-            code=302
-        )
+        return redirect(REDIRECT_URL, code=302)
 
-    return render_template(
-        "not-configured.html"
-    ), 503
-
+    return render_template("not-configured.html"), 503
 
 # =========================================================
 # SIMPLE HEALTH CHECK
