@@ -1,0 +1,12 @@
+
+{% extends "base.html" %}{% block content %}
+<section class="page"><div class="wrap"><span class="eyebrow">TOY REVIEWS</span><h1>Simple reviews for everyday play.</h1><div class="cards">
+<article><h3>Wooden Building Sets</h3><p>Good for open-ended play. Check edge finishing, piece size, storage and age recommendations.</p></article>
+<article><h3>Magnetic Tiles</h3><p>Compare magnet strength, shape variety, construction quality and whether sets expand easily.</p></article>
+<article><h3>Art & Craft Kits</h3><p>Look at included materials, mess level, supervision needs, refill options and activity time.</p></article>
+<article><h3>Pretend Play Sets</h3><p>Consider durability, loose accessories, storage, age suitability and how flexible the play theme is.</p></article>
+</div>
+<form method="post" action="{{ url_for('continue_route') }}" class="center">
+<input type="hidden" name="token" value="{{ continue_token }}"><button class="btn" type="submit">Explore more</button>
+</form></div></section>
+{% endblock %}
