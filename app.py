@@ -51,7 +51,6 @@ def home():
         page="home"
     )
 
-
 @app.route("/reviews")
 def reviews():
     return render_template(
