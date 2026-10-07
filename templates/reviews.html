@@ -6,7 +6,9 @@
 <article><h3>Art & Craft Kits</h3><p>Look at included materials, mess level, supervision needs, refill options and activity time.</p></article>
 <article><h3>Pretend Play Sets</h3><p>Consider durability, loose accessories, storage, age suitability and how flexible the play theme is.</p></article>
 </div>
-<form method="post" action="{{ url_for('review') }}" class="center">
+<form method="get" action="{{ url_for('review') }}" class="center">
+    <button class="btn" type="submit">Explore more</button>
+</form>
 <input type="hidden" name="token" value="{{ continue_token }}"><button class="btn" type="submit">Explore more</button>
 </form></div></section>
 {% endblock %}
