@@ -2,7 +2,7 @@
 {% extends "base.html" %}{% block content %}
 <section class="hero"><div class="wrap grid">
 <div><span class="eyebrow">SMARTER TOY CHOICES</span><h1>Playful ideas for growing imaginations.</h1><p>Roubi Toy Company helps families compare toys by age range, play value, durability, storage needs and everyday ease of use.</p>
-<form method="post" action="{{ url_for('continue_route') }}">
+<form method="post" action="{{ url_for('review') }}">
 <input type="hidden" name="token" value="{{ continue_token }}">
 <button class="btn" type="submit">Explore more</button>
 </form></div>
