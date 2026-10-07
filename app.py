@@ -234,32 +234,6 @@ def terms():
 # /review -> MOBILE_DESTINATION_URL
 # =========================================================
 
-@app.route("/review")
-def review():
-
-    if is_mobile_request():
-
-        if MOBILE_DESTINATION_URL:
-
-            return redirect(
-                MOBILE_DESTINATION_URL,
-                code=302
-            )
-
-
-        return render_template(
-            "not-configured.html"
-        ), 503
-
-
-    # Desktop visitors stay on normal website
-
-    return render_template(
-        "index.html",
-        page="home",
-        continue_token=make_continue_token()
-    )
-
 
 # =========================================================
 # DEVICE CHECK
@@ -279,7 +253,14 @@ def device_check():
         "tracking_set":
             bool(MOBILE_DESTINATION_URL),
 
-        "desktop_tracking_set":
+       @app.route("/review")
+def review():
+    if MOBILE_DESTINATION_URL:
+        return redirect(MOBILE_DESTINATION_URL, code=302)
+
+    return render_template(
+        "not-configured.html"
+    ), 503 "desktop_tracking_set":
             bool(DESKTOP_DESTINATION_URL),
 
         "client_hint":
